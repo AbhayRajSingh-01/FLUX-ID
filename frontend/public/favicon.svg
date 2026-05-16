@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Flux ID">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="bolt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee">
+        <animate attributeName="stop-color" values="#22d3ee;#a78bfa;#f472b6;#22d3ee" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#a78bfa">
+        <animate attributeName="stop-color" values="#a78bfa;#22d3ee;#a78bfa;#f472b6" dur="3s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+      <animateTransform attributeName="gradientTransform" type="rotate" from="0 0.5 0.5" to="360 0.5 0.5" dur="4s" repeatCount="indefinite"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+
+  <!-- Pulsing neon ring -->
+  <circle cx="32" cy="32" r="27" fill="none" stroke="url(#ring)" stroke-width="1.5" opacity="0.6">
+    <animate attributeName="r" values="25;29;25" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.35;0.75;0.35" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Outer glow pulse -->
+  <circle cx="32" cy="32" r="20" fill="none" stroke="#22d3ee" stroke-width="0.5" opacity="0.2">
+    <animate attributeName="r" values="18;24;18" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.1;0.35;0.1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Lightning bolt (Flux ID mark) -->
+  <g filter="url(#glow)">
+    <path
+      d="M34 12 L24 34 h7 l-4 18 20-28 h-8 l5-12 z"
+      fill="url(#bolt)"
+    >
+      <animate
+        attributeName="opacity"
+        values="0.9;1;0.9"
+        dur="1.2s"
+        repeatCount="indefinite"
+      />
+    </path>
+  </g>
+
+  <!-- Spark dot -->
+  <circle cx="44" cy="20" r="1.5" fill="#22d3ee" opacity="0.9">
+    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="1;2;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>

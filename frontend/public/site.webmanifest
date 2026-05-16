@@ -1,0 +1,16 @@
+{
+  "name": "Flux ID",
+  "short_name": "Flux ID",
+  "description": "Secure authentication platform",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#030712",
+  "background_color": "#030712",
+  "display": "standalone"
+}
